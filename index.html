@@ -1,0 +1,188 @@
+<?php
+
+if(isset($_POST["submit"])){
+// Checking For Blank Fields..
+if($_POST["vname"]==""||$_POST["vemail"]==""||$_POST["msg"]==""){
+echo "Fill All Fields..";
+}else{
+// Check if the "Sender's Email" input field is filled out
+$email=$_POST['vemail'];
+// Sanitize E-mail Address
+$email =filter_var($email, FILTER_SANITIZE_EMAIL);
+// Validate E-mail Address
+$email= filter_var($email, FILTER_VALIDATE_EMAIL);
+
+if (!$email){
+echo "Invalid Sender's Email";
+}
+else{
+
+$message = $_POST['msg'];
+$headers = 'From:'. $email2 . "\r\n"; // Sender's Email
+$headers .= 'Cc:'. $email2 . "\r\n"; // Carbon copy to Sender
+// Message lines should not exceed 70 characters (PHP rule), so wrap it
+$message = wordwrap($message, 70);
+// Send Mail By PHP Mail Function
+mail("ncomputerx92@gmail.com", $message, $headers);
+
+echo "Your mail has been sent successfully ! Thank you for your feedback";
+}
+}
+}
+?>
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<!-- saved from url=(0135)file:///C:/Users/nicholas/OneDrive%20-%20Belmont%20College/church%20website/Live/coming%20soon%20live/Orange%20Coming%20soon/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="shortcut icon" href="file:///C:/Users/nicholas/OneDrive%20-%20Belmont%20College/church%20website/in%20design/coming%20soon%20working/images/favicon.ico">
+
+<!--<![endif]-->
+<meta charset="utf-8">
+<title>Christ The King Lutheran Church Coming Soon!</title>
+<meta name="description" content="Trendset Page under construction">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link href="./index_files/css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="./index_files/styles.css">
+</head>
+
+<body id="home" cz-shortcut-listen="true">
+<div id="Header">
+<div class="wrapper">
+
+	<h1 style="
+    margin-top: 0px;
+    margin-bottom: 0px;
+">Christ The King Lutheran Church</h1>
+
+	<h1 style="
+    margin-top: 0px;
+">C T K  C H U R C H . N E T </h1>
+	</div>
+
+</div>
+
+<div id="Content" class="wrapper">
+<div class="countdown styled" style="
+    margin-top: 150px;
+"><div>32 <span>days</span></div><div>21 <span>hrs</span></div><div>11 <span>min</span></div><div>50 <span>sec</span></div></div>
+
+<div>
+
+</div>
+
+<h2 class="intro">We're working hard to build our website.
+	<br>
+	Stay tuned for something amazing!
+	<br>
+
+	<title>FeedBack Form With Email Functionality</title>
+	<link href="http://ctkchurch.net/site_in_progress/css/styles.css" rel="stylesheet">
+
+	<!-- Body Starts Here -->
+
+	<div class="container">
+	<!-- Feedback Form Starts Here -->
+	<div id="feedback">
+	<!-- Heading Of The Form -->
+	<div class="head">
+	<p style="
+	  margin-left: 150px;
+	">Send us your Suggestions!</p>
+	</div>
+	<!-- Feedback Form -->
+	<form action="secure_email_formy.php"
+	id="form" method="post" name="form" style="
+	  margin-left: 150px;
+	">
+<input name="vemail" placeholder="Your Email" type="text" value="">
+	<input name="vname" placeholder="Your Name" type="text" value="">
+<textarea name="msg" placeholder="Type your text here..."></textarea>
+	<input id="send" name="submit" type="submit" value="Send Feedback">
+	</form>
+	<h3><!--?php include "secure_email_code.php"?--></h3>
+	</div>
+	<!-- Feedback Form Ends Here -->
+	</div>
+
+	<!-- Body Ends Here -->
+
+
+
+
+
+<!--
+
+	<br/>Subscribe to be notified.</h2>
+
+-->
+<!--
+ form added
+<h3>
+
+	<form action="ctkchurchstc@gmail.com" enctype="text/plain" method="post">
+<p>Name: <input name="Name" type="text" id="Name" size="40"></p>
+<p>E-mail address: <input name="E-mail" type="text" id="E-mail" size="40"></p>
+<p>Comment:</p>
+<p><textarea name="Comment" cols="55" rows="5"
+id="Suggestions"></textarea></p>
+<p><input type="submit" name="Submit" value="Submit"></p>
+</form>
+
+</h3>
+-->
+
+
+
+<!-- end form -->
+
+<!--
+
+<div id="subscribe">
+	<form action="contact.php" method="post">
+		<p><input name="cf_email" value="Enter your e-mail" type="text" id="cf_email"/>
+		<input type="button" value="submit">
+		</p>
+	</form>
+
+
+
+
+	<div id="socialIcons">
+
+		<ul>
+			<li><a href="" title="Twitter" class="twitterIcon"></a></li>
+			<li><a href="" title="facebook" class="facebookIcon"></a></li>
+			<li><a href="" title="linkedIn" class="linkedInIcon"></a></li>
+			<li><a href="" title="Pintrest" class="pintrestIcon"></a></li>
+		</ul>
+	</div>
+</div>
+
+-->
+
+<!--
+Credit given
+
+<span class="tempBy">Template by: <a href="http://webthemez.com" alt="webthemez">WebThemez.com</a></span>
+</div>
+
+
+<div id="overlay"></div>
+-->
+
+<!--Scripts-->
+<script type="text/javascript" src="./index_files/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="./index_files/Backstretch.js"></script>
+<script type="text/javascript" src="./index_files/jquery.countdown.js"></script>
+<script type="text/javascript" src="./index_files/global.js"></script>
+
+
+
+</h2></div><div class="backstretch" style="left: 0px; top: 0px; overflow: hidden; margin: 0px; padding: 0px; height: 911px; width: 1903px; z-index: -999999; position: fixed;"><img src="./index_files/road2.jpg" style="position: absolute; margin: 0px; padding: 0px; border: none; width: 1903px; height: 1242.64908854167px; max-height: none; max-width: none; z-index: -999999; left: 0px; top: -165.824544270833px;"></div>
+</body></html>
